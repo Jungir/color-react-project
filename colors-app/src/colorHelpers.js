@@ -18,7 +18,7 @@ function generatePalette(starterPalette){
         //push i into scale
         for (let i in scale){
             newPalette.colors[levels[i]].push({
-                name : `${color.name} ${levels.i}`,
+                name : `${color.name} ${i}00`,
                 id : color.name.toLowerCase().replace(/ /g, '-'),
                 hex : scale[i],
                 rgb : chroma(scale[i]).css(),

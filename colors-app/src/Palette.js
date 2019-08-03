@@ -2,7 +2,7 @@ import React, { Component } from 'react'
 import ColorBox from './ColorBox';
 import './Palette.css';
 //indiv palets filled with 20 boxes
-export default class palette extends Component {
+class Palette extends Component {
     render() {
         const colorBoxes = this.props.colors.map ((color) => {
             return <ColorBox background={color.color} name={color.name}/>
@@ -18,3 +18,4 @@ export default class palette extends Component {
         )
     }
 }
+export default Palette;

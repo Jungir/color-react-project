@@ -41,11 +41,11 @@ class Navbar extends Component {
                 </div>
             </div>
             <div className="select-container">
-            <Select value={format} onChange={this.handleFormatChange}>
-                <MenuItem value="hex">HEX - #fff333</MenuItem>
-                <MenuItem value="rgb">RGB - rgb(255,255,255)</MenuItem>
-                <MenuItem value="rgba">RGBA - rgba(255,255,255, 1.0)</MenuItem>
-            </Select>
+                <Select value={format} onChange={this.handleFormatChange}>
+                    <MenuItem value="hex">HEX - #fff333</MenuItem>
+                    <MenuItem value="rgb">RGB - rgb(255,255,255)</MenuItem>
+                    <MenuItem value="rgba">RGBA - rgba(255,255,255, 1.0)</MenuItem>
+                </Select>
             </div>
             <Snackbar
           anchorOrigin={{ vertical: "bottom", horizontal: "left" }}

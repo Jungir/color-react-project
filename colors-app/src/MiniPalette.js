@@ -1,32 +1,39 @@
 import React from 'react';
 import { withStyles } from '@material-ui/styles';
+import { flexbox } from '@material-ui/system';
 
 const styles = {
     //scoped css styles
-    main: {
-        backgroundColor: 'purple',
-        border: '3px solid teal',
-        
+    root : {
+        border: "1px solid black",
+        background : "white",
+        borderRadius : "5px",
+        padding : "0.5rem",
+        position : "relative",
+        overflow: "hidden",
+        "&:hover" : {
+            cursor : 'pointer'
+        } 
     },
-    secondary: {
-        backgroundColor:'Pink',
-        "& h1" : {
-            color: 'white',
-            "& span" : {
-                color: 'green'
-            }
-        }
+    color : {
+        background : "grey",
+    },
+    title : {
+        display: 'flex', justifyContent : 'space-between', alignItems : 'center', margin : '0', color: 'balck', paddingTop : '0.5rem', fontSize: '1rem', position: 'relative'
+    },
+    emoji : {
+        margin : ".5rem",
+        fontSize : '1.5rem'
     }
+
 }
 
 function MiniPalette(props){
-    const {classes} = props;
+    const {classes, paletteName, emoji} = props;
     return (
-        <div className={classes.main}>
-            <h1>Mini Palette</h1>
-            <section className={classes.secondary}>
-                <h1> inside section  Mini Palette</h1>            
-            </section>
+        <div className={classes.root}>
+           <div className={classes.colors}></div>
+           <h5 className={classes.title}>{paletteName} <span className={classes.emoji}>{emoji}</span></h5>
         </div>
     )
 }

@@ -2,7 +2,7 @@ import React, { Component } from 'react'
 import ColorBox from './ColorBox';
 import Navbar from './Navbar';
 import './Palette.css';
-
+import PaletteFooter from './Footer';
 //indiv palets filled with 20 boxes
 class Palette extends Component {
     constructor(props){
@@ -28,15 +28,12 @@ class Palette extends Component {
 
         return (
             <div className='Palette'>
-                <Navbar level={level} changeLevel={this.changeLevel} handleChange={this.changeFormat}/>
+                <Navbar showAllColors={true} level={level} changeLevel={this.changeLevel} handleChange={this.changeFormat}/>
                
                 <div className="Palette-colors">
                     {colorBoxes}
                 </div>
-                <footer className='Palette-footer'>
-                     {name}
-                     <span className='emoji'>{emoji}</span>
-                 </footer>
+                <PaletteFooter name={name} emoji={emoji}/>
             </div>
         )
     }

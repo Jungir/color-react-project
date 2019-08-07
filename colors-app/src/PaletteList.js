@@ -4,33 +4,38 @@ import {withStyles} from '@material-ui/styles';
 const styles = {
     root : {
         background : 'grey',
-        height: '100vh',
         display : 'flex',
         alignItems : 'center',
         justifyContent : 'center'
     },
     container : {
-        width: '50%',
+        width: '90%',
         display : 'flex',
-        alignItems : 'flex-start',
+        alignItems : 'center',
         flexDirection : 'column',
-        flexWrap : 'wrap'
+        flexWrap : 'wrap',
     },
     nav : {
         display : 'flex',
-        width : '100%',
+        maxWidth : '80%',
         justifyContent : 'space-between',
         color : 'white'
     },
     palettes : {
         boxSizing : 'border-box',
-        width : '100%',
+        width : '70%',
         display : 'grid',
         gridTemplateColumns: 'repeat(3, 30%)',
-        gridGap : '5%'
+        justifyContent : 'space-evenly',
+        gridGap : '3%',
+        height: '80%'
+       
     }
 };
 class PaletteList extends Component {
+    goToPalette = (id) =>{
+        this.props.history.push(`/palette/${id}`);
+    }
     render() {
         const {palettes, classes} = this.props;
         return (
@@ -41,7 +46,7 @@ class PaletteList extends Component {
                     </nav>
                     <div className={classes.palettes}>
                         {palettes.map( palette => (
-                        <MiniPalette {...palette}/>))}
+                        <MiniPalette {...palette} handleClick={() => this.goToPalette(palette.id)} />))}
                     </div>
                 </div>
 
